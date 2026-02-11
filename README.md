@@ -4,6 +4,7 @@ remotes::install_github("pelointransitivity/PELO")
 
 # Example on Rock Paper Scissor data
 
+```r
 library(PELO)
 
 # rock paper scissor - toy dataset (no tie)
@@ -51,3 +52,4 @@ View(pelo_obj$pair_adv)
 # game predictions (in terms of accuracy) are perfect afterwards
 rps_df[round(pelo_obj$preds,0)!=rps_df$match_result,]
 pelo_obj$preds[round(pelo_obj$preds,0)!=rps_df$match_result]
+```
