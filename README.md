@@ -24,8 +24,8 @@ View(rps_df)
 
 # before model run
 colnames(rps_df) <- c('Time','A','B','match_result')
-players <- sort(unique(c(rps_df$A, rps_df$B)))
-player_id_mapping <- data.frame("Names"=players, "ID"=1:length(players))
+player_id_mapping <- PELO::get_player_id_mapping(rps_df)
+players <- player_id_mapping$Names
 initial_rating <- PELO::initialize_ratings(players, 1500)
 initial_pair_adv <- PELO::initialize_pair_adv_mat(players, 0)
 
